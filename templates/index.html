@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR code generator</title>
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+  <div class="title">
+    <h1>qr code generator</h1>
+    <h2>insert link below to generate a qr code</h2>
+  </div>
+  <form action="/create" method="post">
+    <input type="text" name="link" />
+    <button type="submit">Generate QR</button>
+  </form>
+  {% if data %}
+  <div class="generated">
+    <img src="{{data}}" alt="ascii generated qr code" />
+    <p>Here is the QR code we generated for you 🚀</p>
+  </div>
+  {% endif %}
+</body>
+</html>
